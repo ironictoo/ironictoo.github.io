@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research & Programming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header reveal" style="--delay: 0.05s">
+        <div>
+          <p class="kicker">Personal Research</p>
+          <h1 class="site-title">Barnes Lab</h1>
+          <p class="tagline">
+            Publications and programming projects with an emphasis on rigorous,
+            reproducible tools.
+          </p>
+        </div>
+        <nav class="site-nav">
+          <a href="#publications">Publications</a>
+          <a href="#programming">Programming</a>
+        </nav>
+      </header>
+
+      <main>
+        <section id="programming" class="section reveal" style="--delay: 0.25s">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Open Source</p>
+              <h2>Programming</h2>
+              <p class="section-subtitle">
+                Deeper dives into the tooling and engineering choices behind my
+                research software.
+              </p>
+            </div>
+            <div class="section-accent"></div>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-head">
+                <h3>ROCKETSHIP</h3>
+                <p>
+                  Dynamic contrast-enhanced MRI analysis software for parametric
+                  and DCE workflows.
+                </p>
+              </div>
+              <dl class="project-meta">
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Parametric MRI + DCE-MRI processing</dd>
+                </div>
+                <div>
+                  <dt>Environment</dt>
+                  <dd>MATLAB-based workflows</dd>
+                </div>
+                <div>
+                  <dt>Acceleration</dt>
+                  <dd>Optional NVIDIA GPU via Gpufit</dd>
+                </div>
+                <div>
+                  <dt>License</dt>
+                  <dd>GPL-2.0</dd>
+                </div>
+              </dl>
+              <ul class="project-points">
+                <li>
+                  Processes parametric MRI and DCE-MRI files, originally developed at
+                  the Biological Imaging Center at Caltech.
+                </li>
+                <li>
+                  Designed to keep data prep, model fitting, and review steps in a
+                  single workflow.
+                </li>
+              </ul>
+              <p class="project-note">
+                Key reference: Ng et al., “ROCKETSHIP: a flexible and modular
+                software tool for the planning, processing and analysis of dynamic
+                contrast-enhanced MRI studies,” BMC Medical Imaging (2015).
+              </p>
+              <div class="project-links">
+                <a class="button" href="https://github.com/petmri/ROCKETSHIP">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h3>Gpufit</h3>
+                <p>
+                  GPU-accelerated curve fitting with Levenberg-Marquardt optimization,
+                  adapted for MRI fitting workflows.
+                </p>
+              </div>
+              <dl class="project-meta">
+                <div>
+                  <dt>Core</dt>
+                  <dd>CUDA-based Levenberg-Marquardt</dd>
+                </div>
+                <div>
+                  <dt>Bindings</dt>
+                  <dd>MATLAB, Python, Java, C#</dd>
+                </div>
+                <div>
+                  <dt>License</dt>
+                  <dd>MIT</dd>
+                </div>
+                <div>
+                  <dt>Upstream</dt>
+                  <dd>Forked from gpufit/Gpufit</dd>
+                </div>
+              </dl>
+              <ul class="project-points">
+                <li>
+                  Built for high-throughput fitting workloads, with benchmarking and
+                  an SDK included alongside example workflows.
+                </li>
+                <li>
+                  Supports multiple language bindings so the GPU core can plug into
+                  existing analysis pipelines.
+                </li>
+              </ul>
+              <p class="project-note">
+                Reference: Przybylski et al., “Gpufit: An open-source toolkit for
+                GPU-accelerated curve fitting,” Scientific Reports (2017).
+              </p>
+              <div class="project-links">
+                <a class="button" href="https://github.com/ironictoo/Gpufit">Repository</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="publications" class="section reveal" style="--delay: 0.35s">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Selected Work</p>
+              <h2>Publications</h2>
+              <p class="section-subtitle">
+                A living list driven by a small JSON file, so updating it stays quick.
+              </p>
+            </div>
+            <div class="section-accent"></div>
+          </div>
+
+          <ol class="pubs-list" id="publications-list"></ol>
+          <p class="pubs-empty" id="publications-empty">
+            No publications yet. Add entries in <code>data/publications.json</code>
+            and this list will update automatically.
+          </p>
+          <div class="pubs-actions">
+            <a
+              class="button ghost"
+              href="https://scholar.google.com/citations?user=S6lx9-sAAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Full publication list
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Built for GitHub Pages. Last updated <span id="last-updated"></span>.</p>
+      </footer>
+    </div>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>

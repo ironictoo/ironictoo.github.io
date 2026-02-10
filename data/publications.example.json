@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Example Paper Title",
+    "authors": "Last, F. M., Coauthor, A. B.",
+    "venue": "Journal Name",
+    "year": 2025,
+    "links": [
+      { "label": "DOI", "url": "https://doi.org/00.0000/example" },
+      { "label": "PDF", "url": "https://example.com/paper.pdf" }
+    ]
+  }
+]
