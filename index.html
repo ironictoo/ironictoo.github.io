@@ -79,9 +79,12 @@
                 </li>
               </ul>
               <p class="project-note">
-                Key reference: Ng et al., “ROCKETSHIP: a flexible and modular
-                software tool for the planning, processing and analysis of dynamic
-                contrast-enhanced MRI studies,” BMC Medical Imaging (2015).
+                Reference:
+                <a href="https://doi.org/10.1186/s12880-015-0062-3">
+                  Barnes et al., “ROCKETSHIP: a flexible and modular
+                  software tool for the planning, processing and analysis of dynamic
+                  contrast-enhanced MRI studies,” BMC Medical Imaging (2015).
+                </a>
               </p>
               <div class="project-links">
                 <a class="button" href="https://github.com/petmri/ROCKETSHIP">Repository</a>
@@ -98,20 +101,20 @@
               </div>
               <dl class="project-meta">
                 <div>
-                  <dt>Core</dt>
-                  <dd>CUDA-based Levenberg-Marquardt</dd>
+                  <dt>Focus</dt>
+                  <dd>CUDA accelerated Levenberg-Marquardt curve fitting</dd>
+                </div>
+                <div>
+                  <dt>Environment</dt>
+                  <dd>CUDAs</dd>
                 </div>
                 <div>
                   <dt>Bindings</dt>
-                  <dd>MATLAB, Python, Java, C#</dd>
+                  <dd>Python, MATLAB, Java</dd>
                 </div>
                 <div>
                   <dt>License</dt>
                   <dd>MIT</dd>
-                </div>
-                <div>
-                  <dt>Upstream</dt>
-                  <dd>Forked from gpufit/Gpufit</dd>
                 </div>
               </dl>
               <ul class="project-points">
@@ -123,15 +126,68 @@
                   and >1000x faster than interpreted MATLAB-based alternatives.
                 </li>
                 <li>
-                  Added support for numerical differentiation if derivative function is not available.
+                  Added support for bounded fitting and numerical differentiation.
                 </li>
               </ul>
               <p class="project-note">
-                Reference: Przybylski et al., “Gpufit: An open-source toolkit for
-                GPU-accelerated curve fitting,” Scientific Reports (2017).
+                Reference:
+                <a href="https://doi.org/10.1038/s41598-017-15313-9">
+                  Przybylski et al., “Gpufit: An open-source toolkit for
+                  GPU-accelerated curve fitting,” Scientific Reports (2017).
+                </a>
               </p>
               <div class="project-links">
                 <a class="button" href="https://github.com/ironictoo/Gpufit">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h3>Vascular Function</h3>
+                <p>
+                  Auto AIF detection for DCE-MRI data and ROCKETSHIP using a neural network.
+                </p>
+              </div>
+              <dl class="project-meta">
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Automatic AIF detection for DCE-MRI processing</dd>
+                </div>
+                <div>
+                  <dt>Environment</dt>
+                  <dd>Keras/TensorFlow</dd>
+                </div>
+                <div>
+                  <dt>Model</dt>
+                  <dd>UNet with pretrained weights</dd>
+                </div>
+                <div>
+                  <dt>License</dt>
+                  <dd>Partial MIT</dd>
+                </div>
+              </dl>
+              <ul class="project-points">
+                <li>
+                  Keras/TensorFlow implementation for automatic AIF detection in DCE-MRI data
+                  and ROCKETSHIP workflows.
+                </li>
+                <li>
+                  Inference predicts an AIF curve and 3D mask with
+                  automated normalization and resampling steps.
+                </li>
+                <li>
+                  Includes training and inference scripts plus a pretrained model.
+                </li>
+              </ul>
+              <p class="project-note">
+                Reference:
+                <a href="https://doi.org/10.1002/mrm.70020">
+                  Saca et al., “Automatic detection of arterial input function for brain
+                  DCE-MRI in multi-site cohorts,” Magnetic Resonance in Medicine (2025).
+                </a>
+              </p>
+              <div class="project-links">
+                <a class="button" href="https://github.com/petmri/vascular_function">Repository</a>
               </div>
             </article>
           </div>
