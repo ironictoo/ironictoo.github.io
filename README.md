@@ -1,2 +1,4 @@
 # ironictoo.github.io
-Personal Website
+code for samuelbarnes.net
+
+Research and software projects
