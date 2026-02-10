@@ -225,6 +225,25 @@ a {
   gap: 24px;
 }
 
+.project-subhead {
+  grid-column: 1 / -1;
+  margin: 8px 0 -4px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.project-subhead::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-top: 10px;
+  background: var(--border);
+}
+
 .project-card {
   background: var(--card);
   border: 1px solid var(--border);
