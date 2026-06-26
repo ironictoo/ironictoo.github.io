@@ -191,6 +191,100 @@
               </div>
             </article>
 
+            <article class="project-card">
+              <div class="project-head">
+                <h3>DCEPrep</h3>
+                <p>
+                  Processing pipeline for DCE-MRI data with automated quality
+                  control reporting.
+                </p>
+              </div>
+              <dl class="project-meta">
+                <div>
+                  <dt>Focus</dt>
+                  <dd>DCE-MRI preprocessing + Ktrans mapping</dd>
+                </div>
+                <div>
+                  <dt>Environment</dt>
+                  <dd>Python + Docker (FSL, ANTs, FreeSurfer)</dd>
+                </div>
+                <div>
+                  <dt>Reporting</dt>
+                  <dd>Automated HTML case + population reports</dd>
+                </div>
+                <div>
+                  <dt>License</dt>
+                  <dd>MIT</dd>
+                </div>
+              </dl>
+              <ul class="project-points">
+                <li>
+                  Combines VFA-based T1 mapping, bias-field and motion correction
+                  (FSL mcflirt), and Ktrans parameter mapping in a single pipeline.
+                </li>
+                <li>
+                  Neural-network AIF selection with z-axis normalization and gray
+                  matter/CSF masking.
+                </li>
+                <li>
+                  BIDS-compliant data organization and Docker containerization
+                  for reproducible processing.
+                </li>
+              </ul>
+              <p class="project-note">
+                Reference: publication pending (2026), a multi-site aging study of
+                blood-brain barrier permeability.
+              </p>
+              <div class="project-links">
+                <a class="button" href="https://github.com/petmri/DCEPrep">Repository</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-head">
+                <h3>AIFArtist</h3>
+                <p>
+                  Desktop tool for manual annotation of arterial input functions
+                  in DCE-MRI data.
+                </p>
+              </div>
+              <dl class="project-meta">
+                <div>
+                  <dt>Focus</dt>
+                  <dd>Manual AIF ROI annotation for DCE-MRI</dd>
+                </div>
+                <div>
+                  <dt>Environment</dt>
+                  <dd>Python + napari</dd>
+                </div>
+                <div>
+                  <dt>Output</dt>
+                  <dd>BIDS-style derivatives</dd>
+                </div>
+                <div>
+                  <dt>License</dt>
+                  <dd>MIT</dd>
+                </div>
+              </dl>
+              <ul class="project-points">
+                <li>
+                  Draw and edit 3D ROIs on BIDS 4D NIfTI data with real-time mean
+                  signal-intensity curves and optional normalization.
+                </li>
+                <li>
+                  Built for high-volume multi-rater review, with rater identifiers
+                  embedded in BIDS-derivative filenames.
+                </li>
+                <li>
+                  Workflow features include auto-queue resumption, image
+                  prefetching, and flagging of poor-quality data.
+                </li>
+              </ul>
+              <div class="project-links">
+                <a class="button" href="https://github.com/petmri/AIFArtist">Repository</a>
+              </div>
+            </article>
+
             <h3 class="project-subhead">Collaborative Projects</h3>
 
             <article class="project-card">
@@ -319,7 +413,7 @@
             <div class="section-accent"></div>
           </div>
 
-          <ol class="pubs-list" id="publications-list"></ol>
+          <div class="pubs-groups" id="publications-list"></div>
           <p class="pubs-empty" id="publications-empty">
             No publications yet. Add entries in <code>data/publications.json</code>
             and this list will update automatically.

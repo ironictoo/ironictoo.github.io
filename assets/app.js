@@ -52,7 +52,29 @@ const renderPublication = (publication) => {
   return item;
 };
 
-const MAX_PUBLICATIONS = 5;
+// Topics render in this order; anything with an unlisted (or missing) topic
+// falls into the final "Other Research" group.
+const TOPIC_ORDER = ["DCE Methods", "Aging", "fMRI", "Body Composition", "SWI", "Other Research"];
+const FALLBACK_TOPIC = "Other Research";
+
+const renderTopicGroup = (topic, publications) => {
+  const group = document.createElement("section");
+  group.className = "pubs-group";
+
+  const heading = document.createElement("h3");
+  heading.className = "pubs-subhead";
+  heading.textContent = topic;
+  group.appendChild(heading);
+
+  const list = document.createElement("ol");
+  list.className = "pubs-list";
+  publications
+    .sort((a, b) => (b.year || 0) - (a.year || 0))
+    .forEach((publication) => list.appendChild(renderPublication(publication)));
+  group.appendChild(list);
+
+  return group;
+};
 
 const loadPublications = async () => {
   try {
@@ -67,10 +89,22 @@ const loadPublications = async () => {
       return;
     }
 
-    const sorted = publications.sort((a, b) => (b.year || 0) - (a.year || 0));
-    const visible = sorted.slice(0, MAX_PUBLICATIONS);
-    visible.forEach((publication) => {
-      publicationsList.appendChild(renderPublication(publication));
+    const byTopic = new Map();
+    publications.forEach((publication) => {
+      const topic = TOPIC_ORDER.includes(publication.topic)
+        ? publication.topic
+        : FALLBACK_TOPIC;
+      if (!byTopic.has(topic)) {
+        byTopic.set(topic, []);
+      }
+      byTopic.get(topic).push(publication);
+    });
+
+    TOPIC_ORDER.forEach((topic) => {
+      const group = byTopic.get(topic);
+      if (group && group.length > 0) {
+        publicationsList.appendChild(renderTopicGroup(topic, group));
+      }
     });
 
     publicationsEmpty.hidden = true;

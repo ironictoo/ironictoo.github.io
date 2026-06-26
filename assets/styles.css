@@ -156,6 +156,29 @@ a {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
+.pubs-groups {
+  display: grid;
+  gap: 36px;
+}
+
+.pubs-subhead {
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-2);
+  font-weight: 700;
+}
+
+.pubs-subhead::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-top: 10px;
+  background: var(--border);
+}
+
 .pubs-list {
   list-style: none;
   padding: 0;
